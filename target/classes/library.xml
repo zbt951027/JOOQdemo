@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.10.0.xsd">
+	<!-- 在这里配置数据库连接 -->
+	<jdbc>
+		<driver>com.mysql.jdbc.Driver</driver>
+		<url>jdbc:mysql://localhost:3306/library</url>
+		<user>root</user>
+		<password>mysqladmin</password>
+	</jdbc>
+
+	<generator>
+		<!-- 默认的代码生成器。 你可以重写这个，来生成你自己的代码风格。. 支持生成: 
+			- org.jooq.util.JavaGenerator 
+			- org.jooq.util.ScalaGenerator 
+		默认是 org.jooq.util.JavaGenerator -->
+		<name>org.jooq.util.JavaGenerator</name>
+
+		<database>
+			<!-- 数据库的类型. 格式是: org.util.[database].[database]Database -->
+			<name>org.jooq.util.mysql.MySQLDatabase</name>
+			
+			<!-- 数据库模式 (或在没有模式支持的情况下，在你的RDBMS中可以是所有者，用户，数据库名称) 来生成 -->
+			<inputSchema>library</inputSchema>
+			
+			<!-- 从模式（Schema）生成所有元素（Java正则表达式，使用管道来分隔几个表达式）注意区分大小写。 -->
+			<includes>.*</includes>
+			
+			<!-- 从模式（Schema）排除所有元素（Java正则表达式，使用管道来分隔几个表达式）  （Java正则表达式，使用管道来分隔几个表达式）。不包括匹配之前的匹配，即不包括有更高的优先级 -->
+			<excludes></excludes>
+		</database>
+		
+		<target>
+			<!-- 在目标目录中生成的包名称 -->
+			<packageName>top.bigwave.jooqdemo</packageName>
+			
+			<!-- 生成的类的目标目录 -->
+			<directory>D:/Java/workspace/test/jooqdemo/src/main/java</directory>
+		</target>
+	</generator>
+</configuration>
